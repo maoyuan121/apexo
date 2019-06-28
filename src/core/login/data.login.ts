@@ -27,14 +27,19 @@ export enum LoginStep {
 
 class Login {
 	@observable server: string = "";
+
+	// 当前用户
 	@observable currentUserID: string = "";
 
+	// 保持离线状态
 	@observable keepOffline = false;
 
 	@observable step: LoginStep = LoginStep.initial;
 
+	// 是否在线
 	@observable online: boolean = false;
 
+	// 每隔 2 秒尝试连接上线
 	constructor() {
 		setInterval(() => {
 			if (this.keepOffline) {
