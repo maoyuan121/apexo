@@ -7,6 +7,7 @@ import {
 	stringToItemForm
 } from "./index";
 
+// 处方药
 export class PrescriptionItem {
 	[key: string]: string | number | Function;
 
@@ -14,12 +15,16 @@ export class PrescriptionItem {
 
 	@observable name: string = "";
 
+	// 一次吃几个
 	@observable unitsPerTime: number = 1;
 
+	// 剂量（单位：毫克）
 	@observable doseInMg: number = 500;
 
+	// 一条吃几次
 	@observable timesPerDay: number = 3;
 
+	// 默认胶囊
 	@observable form: PrescriptionItemForm = PrescriptionItemForm.capsule;
 
 	@computed

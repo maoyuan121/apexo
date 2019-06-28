@@ -1,3 +1,5 @@
+// 处方药相关的枚举
+
 export enum PrescriptionItemForm {
 	ampoule,
 	capsule,

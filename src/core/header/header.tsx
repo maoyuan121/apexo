@@ -31,7 +31,7 @@ export class HeaderComponent extends React.Component<{}, {}> {
 								}}
 								disabled={false}
 								iconProps={{ iconName: 'GlobalNavButton' }}
-								title="GlobalNavButton"
+								title="导航"
 								ariaLabel="GlobalNavButton"
 							/>
 						</section>

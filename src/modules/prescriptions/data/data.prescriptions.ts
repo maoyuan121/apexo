@@ -3,6 +3,7 @@ import { observable } from "mobx";
 
 import { API } from "../../../core";
 
+// 仓储
 class Prescriptions {
 	ignoreObserver: boolean = false;
 

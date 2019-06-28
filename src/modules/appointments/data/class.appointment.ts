@@ -7,6 +7,7 @@ import { patientsData } from "../../patients";
 import { settingsData } from "../../settings";
 import { treatmentsData } from "../../treatments";
 
+// 预约实体
 export class Appointment {
 	_id: string = generateID();
 
@@ -24,24 +25,31 @@ export class Appointment {
 
 	@observable units: number = 1;
 
+	// 病人ID
 	@observable patientID: string = "";
 
+	// 医生
 	@observable staffID: string[] = [];
 
+	// 预约日期
 	@observable date: number = new Date().getTime();
 
+	// 哪几颗牙齿有问题
 	@observable involvedTeeth: number[] = [];
 
+	// 预约时间
 	@observable time: number = 0;
 
 	@observable paidAmount: number = 0;
 
+	// 这个预约是否已经完成
 	@observable done: boolean = false;
 
 	@observable paid: boolean = false;
 
 	@observable notes: string = "";
 
+	// 开了哪些处方药
 	@observable prescriptions: { prescription: string; id: string }[] = [];
 
 	@observable records: string[] = observable([]);

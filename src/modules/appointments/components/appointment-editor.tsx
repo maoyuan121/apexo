@@ -123,7 +123,7 @@ export class AppointmentEditor extends React.Component<
 						<Row gutter={12}>
 							<Col sm={12}>
 								<div className="appointment-input date">
-									<label>Date: </label>
+									<label>日期: </label>
 									<DatePicker
 										disabled={!this.canEdit}
 										className="appointment-date"
@@ -161,7 +161,7 @@ export class AppointmentEditor extends React.Component<
 							<Col sm={12}>
 								<div className="appointment-input time">
 									<label>
-										Time:{" "}
+										时间:{" "}
 										{this.props.appointment!.formattedTime}
 									</label>
 									<Row gutter={12}>
@@ -188,7 +188,7 @@ export class AppointmentEditor extends React.Component<
 							</Col>
 						</Row>
 						<div className="appointment-input date">
-							<label>Operating Staff: </label>
+							<label>操作员工: </label>
 							{staffData.staffMembers.list
 								.filter(staff => staff.operates)
 								.map(staff => {
@@ -234,7 +234,7 @@ export class AppointmentEditor extends React.Component<
 						<TextField
 							multiline
 							disabled={!this.canEdit}
-							label="Details:"
+							label="详情:"
 							value={this.props.appointment!.notes}
 							onChanged={value => {
 								this.props.appointment!.notes = value;
@@ -244,7 +244,7 @@ export class AppointmentEditor extends React.Component<
 						<Row gutter={12}>
 							<Col sm={12}>
 								<div className="appointment-input treatment">
-									<label>Treatment: </label>
+									<label>疗法: </label>
 									<Dropdown
 										disabled={!this.canEdit}
 										className="treatment-type"
@@ -269,7 +269,7 @@ export class AppointmentEditor extends React.Component<
 							</Col>
 							<Col sm={12}>
 								<div className="appointment-input units-number">
-									<label>Units: </label>
+									<label>单位: </label>
 									<TextField
 										disabled={!this.canEdit}
 										type="number"
@@ -325,7 +325,7 @@ export class AppointmentEditor extends React.Component<
 							<div>
 								<hr className="appointment-hr" />
 								<div className="appointment-input prescription">
-									<label>Prescription: </label>
+									<label>处方: </label>
 									<TagInput
 										disabled={!this.canEdit}
 										className="prescription"
@@ -347,7 +347,7 @@ export class AppointmentEditor extends React.Component<
 											);
 										}}
 										strict={true}
-										placeholder="Enter prescription..."
+										placeholder="输入处方..."
 									/>
 								</div>
 
@@ -471,7 +471,7 @@ export class AppointmentEditor extends React.Component<
 								) ? (
 									<div className="appointment-input time">
 										<label>
-											Time (Hours, minutes, seconds)
+											时间 (Hours, minutes, seconds)
 										</label>
 										<TextField
 											className="time-input hours"

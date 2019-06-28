@@ -10,3 +10,5 @@ yarn-error.log*
 
 /dist/desktop-builds
 stats.json
+package-lock.json
+.idea

@@ -8,29 +8,29 @@ interface WeekDayInfo {
 
 export class Calendar {
 	// constants
-	daysShort = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
+	daysShort = ["日", "一", "二", "三", "四", "五", "六"];
 	days = [
-		"Sunday",
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday"
+		"星期日",
+		"星期一",
+		"星期二",
+		"星期三",
+		"星期四",
+		"星期五",
+		"星期六"
 	];
 	monthsShort = [
-		"Jan",
-		"Feb",
-		"Mar",
-		"Apr",
-		"May",
-		"Jun",
-		"Jul",
-		"Aug",
-		"Sep",
-		"Oct",
-		"Nov",
-		"Dec"
+		"一月",
+		"二月",
+		"三月",
+		"四月",
+		"五月",
+		"六月",
+		"七月",
+		"八月",
+		"九月",
+		"十月",
+		"十一月",
+		"十二月"
 	];
 	months = [
 		"January",
@@ -113,6 +113,7 @@ export class Calendar {
 		return selectedWeek.sort((dayA, dayB) => dayA.date - dayB.date);
 	}
 
+	// 看某年某月有多少天
 	numberOfDays(month: number, year: number): number {
 		let numberOfDays = 28;
 		for (; numberOfDays < 32; numberOfDays++) {
@@ -123,6 +124,7 @@ export class Calendar {
 		return numberOfDays;
 	}
 
+	// 算出是星期几
 	getDayOfTheWeek(year: number, month: number, day: number): WeekDayInfo {
 		const index = new Date(year, month, day).getDay();
 		return {
@@ -132,6 +134,7 @@ export class Calendar {
 		};
 	}
 
+	// 根据时间戳选择当前日期
 	selectDayByTimeStamp(timestamp: number) {
 		const d = new Date(timestamp);
 		this.selectedYear = d.getFullYear();
