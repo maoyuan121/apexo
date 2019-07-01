@@ -12,11 +12,15 @@ import "./calendar.scss";
 
 @observer
 export class Calendar extends React.Component<{}, {}> {
+	// 预约的过滤条件
 	@observable filter: string = "";
 
 	c: CalendarClass = new CalendarClass();
+
+	// 选中的预约
 	@observable appointment: Appointment | null = null;
 
+	// 是否显示所有人的预约 （是：显示所有人的， 否：只显示自己的）
 	@observable showAll: boolean = true;
 
 	componentDidMount() {
@@ -36,6 +40,7 @@ export class Calendar extends React.Component<{}, {}> {
 		this.unifyHeight();
 	}
 
+	// 设置下面的预约列的高度都统一取最大的那个
 	unifyHeight() {
 		const parent = document.getElementById("full-day-cols");
 		if (!parent) {
@@ -59,6 +64,8 @@ export class Calendar extends React.Component<{}, {}> {
 	render() {
 		return (
 			<div className="calendar-component container-fluid">
+				{/*年*/}
+				{/*点击：设置当前选择的年、选择的月索引设为 0，选择的日索引设为0，*/}
 				<div className="selector year-selector">
 					<Row>
 						{[
@@ -91,6 +98,7 @@ export class Calendar extends React.Component<{}, {}> {
 						})}
 					</Row>
 				</div>
+				{/*月*/}
 				<div className="selector month-selector">
 					<Row>
 						{this.c.monthsShort.map((monthShort, index) => {
@@ -124,6 +132,8 @@ export class Calendar extends React.Component<{}, {}> {
 						})}
 					</Row>
 				</div>
+				{/*日*/}
+				{/**/}
 				<div className="selector day-selector">
 					<div className="day-selector-wrapper">
 						<div>

@@ -29,15 +29,18 @@ import "./staff-listing.scss";
 export class StaffListing extends React.Component<{}, {}> {
 	@observable selectedId: string = API.router.currentLocation.split("/")[1];
 
+	// 是否可以编辑员工
 	@computed get canEdit() {
 		return API.user.currentUser.canEditStaff;
 	}
 
+	// 选择的员工的索引
 	@computed
 	get selectedMemberIndex() {
 		return staffMembers.getIndexByID(this.selectedId);
 	}
 
+	// 选择的员工
 	@computed
 	get member() {
 		return staffMembers.list[this.selectedMemberIndex];

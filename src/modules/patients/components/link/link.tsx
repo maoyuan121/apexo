@@ -24,7 +24,7 @@ export class PatientLink extends React.Component<
 		};
 		return (
 			<a
-				className={"patient-link-component " + this.props.className}
+				className={"patient-link-component " + (this.props.className || '')}
 				onClick={() => {
 					if (!this.props.notClickable) {
 						API.router.go(["patients", this.props.id]);

@@ -43,8 +43,10 @@ export class StaffMember {
 
 	@observable pin: string | undefined = "";
 
+	// 排班
 	@observable onDutyDays: string[] = [];
 
+	// 排序后的排班
 	@computed
 	get sortedDays() {
 		return this.onDutyDays.sort(
@@ -52,6 +54,7 @@ export class StaffMember {
 		);
 	}
 
+	//  假日
 	@computed
 	get holidays() {
 		return this.days
@@ -59,6 +62,7 @@ export class StaffMember {
 			.map(day => this.days.indexOf(day));
 	}
 
+	// 工作日
 	@computed
 	get onDuty() {
 		return this.days
@@ -66,6 +70,7 @@ export class StaffMember {
 			.map(day => this.days.indexOf(day));
 	}
 
+	// 预约
 	@computed
 	get appointments() {
 		return appointmentsData.appointments.list.filter(
@@ -73,6 +78,7 @@ export class StaffMember {
 		);
 	}
 
+	// 本周的预约
 	@computed
 	get weeksAppointments() {
 		const weeksAppointments: {
@@ -94,6 +100,7 @@ export class StaffMember {
 		return weeksAppointments;
 	}
 
+	// 下周的预约
 	@computed
 	get nextWeekAppointments() {
 		const c = new appointmentsData.Calendar();
@@ -110,6 +117,7 @@ export class StaffMember {
 		});
 	}
 
+	// 上周的预约
 	@computed
 	get lastWeekAppointments() {
 		const c = new appointmentsData.Calendar();
@@ -126,6 +134,7 @@ export class StaffMember {
 		});
 	}
 
+	// 最后发生的一次预约（过去式）
 	@computed
 	get lastAppointment() {
 		return this.pastAppointments[0];
@@ -141,11 +150,13 @@ export class StaffMember {
 		`.toLowerCase();
 	}
 
+	// 下一个预约
 	@computed
 	get nextAppointment() {
 		return this.nextAppointments[0];
 	}
 
+	// 后面的预约
 	@computed
 	get nextAppointments() {
 		return this.appointments
@@ -157,6 +168,7 @@ export class StaffMember {
 			.sort((a, b) => a.date - b.date);
 	}
 
+	// 过去的预约
 	@computed
 	get pastAppointments() {
 		return this.appointments
