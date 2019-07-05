@@ -15,7 +15,7 @@ class Router {
 
 	@computed
 	get currentComponent() {
-		return (
+		return ( 
 			this.directory.find(route => {
 				return (
 					(!route.condition || route.condition()) &&

@@ -40,17 +40,20 @@ export function generateMethods(
 			});
 		},
 
+		// 添加文档
 		async add(item: IClassStatic) {
 			const response = await db.put(item.toJSON());
 			return response;
 		},
 
+		// 删除文档
 		async remove(_id: string) {
 			const doc = await db.get(_id);
 			const response = await db.remove(doc._id, doc._rev || "");
 			return response;
 		},
 
+		// 更新文档
 		async update(_id: string, item: IClassStatic) {
 			const document = item.toJSON();
 			const doc = await db.get(_id);

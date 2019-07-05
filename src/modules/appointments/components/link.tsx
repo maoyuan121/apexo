@@ -30,7 +30,7 @@ export class DateLink extends React.Component<Props, {}> {
 						}
 						API.router.go([ 'appointments', `${y}-${m}-${d}` ]);
 					}}
-				>
+				>					
 					<span className="icon">
 						<Icon iconName="Calendar" />
 					</span>

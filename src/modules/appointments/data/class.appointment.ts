@@ -206,9 +206,9 @@ export class Appointment {
 		this.notes = json.notes
 			? json.notes
 			: json.complaint && json.diagnosis
-			? `Complaint: ${json.complaint}.
+				? `Complaint: ${json.complaint}.
 Diagnosis: ${json.diagnosis}`
-			: "";
+				: "";
 	}
 
 	toJSON(): AppointmentJSON {

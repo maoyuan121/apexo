@@ -13,7 +13,7 @@ export class MenuComponent extends React.Component<any, any> {
 	public render() {
 		return (
 			<div>
-				<div className="visible-lg visible-md icon-list">
+				<div className="visible-lg visible-md icon-list">					
 					{menu.sortedItems.map((item, index) => {
 						return (
 							<div
@@ -27,6 +27,7 @@ export class MenuComponent extends React.Component<any, any> {
 						);
 					})}
 				</div>
+				
 				<Panel
 					className="menu"
 					isLightDismiss={true}
